@@ -2,6 +2,7 @@ package com.uniksoft.controller;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.uniksoft.model.User;
+import com.uniksoft.util.SimpleSHA1;
 
 
 public class UserAction extends ActionSupport {
@@ -12,8 +13,9 @@ public class UserAction extends ActionSupport {
     public String addUser() throws Exception {
         User user = new User();
         user.setUsername(username);
-        user.setEncryptedPassword(password);
-        user.setSalt(password);
+        String salt = SimpleSHA1.getSalt(password);
+        user.setSalt(salt);
+        user.setEncryptedPassword(SimpleSHA1.getEncryptedPassword(salt, password));
         UserDAO dao = new UserDAO();
         String daoAddUserResult = dao.addUser(user);
         if (daoAddUserResult.equals("success")) {
