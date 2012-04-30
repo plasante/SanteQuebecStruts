@@ -3,6 +3,34 @@
         "-//OpenSymphony Group//XWork Validator 1.0.2//EN"
         "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
 <validators>
+    <field name="firstName">
+        <field-validator type="requiredstring">
+            <param name="trim">true</param>
+            <message key="First Name is required" />
+        </field-validator>
+        <field-validator type="stringlength">
+            <param name="maxLength">20</param>
+            <message>First Name must not be longer than 20 characters</message>
+        </field-validator>
+        <field-validator type="regex">
+            <param name="expression">[a-zA-Z0-9]+</param>
+            <message><![CDATA[ First Name must contain only letters and numbers ]]></message>
+        </field-validator>
+    </field>
+    <field name="lastName">
+        <field-validator type="requiredstring">
+            <param name="trim">true</param>
+            <message key="Last Name is required" />
+        </field-validator>
+        <field-validator type="stringlength">
+            <param name="maxLength">20</param>
+            <message>Last Name must not be longer than 20 characters</message>
+        </field-validator>
+        <field-validator type="regex">
+            <param name="expression">[a-zA-Z0-9]+</param>
+            <message><![CDATA[ Last Name must contain only letters and numbers ]]></message>
+        </field-validator>
+    </field>
     <field name="username">
         <field-validator type="requiredstring">
             <param name="trim">true</param>

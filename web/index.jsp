@@ -7,5 +7,6 @@
     </head>
     <body>
         <h1>Main Page</h1>
+        <a href="welcome">Go To welcome.tiles</a>
     </body>
 </html>
