@@ -2,3 +2,4 @@
 <%@taglib prefix="s" uri="/struts-tags" %>
 <h2>Welcome body</h2>
 <s:actionmessage/>
+<s:actionerror/>

@@ -23,6 +23,10 @@
         <put-attribute name="title" value="Users Page" />
         <put-attribute name="body" value="/jsp/users/index.jsp"/>
     </definition>
+    <definition name="/userForm.tiles" extends="baseLayout">
+        <put-attribute name="title" value="User Page" />
+        <put-attribute name="body" value="/jsp/users/edit.jsp"/>
+    </definition>
     <definition name="/customer.tiles" extends="baseLayout">
         <put-attribute name="title" value="Customer Form" />
         <put-attribute name="body"  value="/Customer.jsp" />

@@ -30,6 +30,21 @@
                 <result name="input"   type="tiles">/registrationForm.tiles</result>
         </action>
         
+        <action name="editUser"
+                class="com.uniksoft.controller.UserAction"
+                method="editUser">
+                <result name="success" type="tiles">/userForm.tiles</result>
+                <result name="error" type="tiles">/welcome.tiles</result>
+        </action>
+        
+        <action name="updateUser"
+                class="com.uniksoft.controller.UserAction"
+                method="updateUser">
+                <result name="success" type="tiles">/usersIndex.tiles</result>
+                <result name="error" type="tiles">/welcome.tiles</result>
+                <result name="input" type="tiles">/userForm.tiles</result>
+        </action>
+        
         <action name="usersIndex" method="listUsers" class="com.uniksoft.controller.UserAction">
                  <result name="success" type="tiles">/usersIndex.tiles</result>
         </action>

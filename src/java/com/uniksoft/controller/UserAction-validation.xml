@@ -46,6 +46,14 @@
             <message><![CDATA[ Username must contain only letters and numbers ]]></message>
         </field-validator>
     </field>
+    <field name="email">
+        <field-validator type="requiredstring">
+            <message>Please enter a email</message>
+        </field-validator>
+        <field-validator type="email">
+            <message>Please enter a valid email</message>
+        </field-validator>
+    </field>
     <field name="password">
         <field-validator type="requiredstring">
             <param name="trim">true</param>

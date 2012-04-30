@@ -11,5 +11,6 @@
     <property name="hibernate.current_session_context_class">thread</property>
     <property name="hibernate.query.factory_class">org.hibernate.hql.classic.ClassicQueryTranslatorFactory</property>
     <mapping class="com.uniksoft.model.User" />
+    <mapping class="com.uniksoft.model.Person" />
   </session-factory>
 </hibernate-configuration>

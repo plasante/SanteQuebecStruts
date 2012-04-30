@@ -9,24 +9,23 @@ import org.apache.struts2.interceptor.validation.SkipValidation;
 
 
 public class UserAction extends ActionSupport {
+    private int id;
     private String firstName;
     private String lastName;
     private String username;
+    private String email;
     private String password;
     private String passwordConfirmation;
     
     List<User> users = new ArrayList<User>();
-    
-    @Override
-    public String execute() {
-        return SUCCESS;
-    }
-    
+    User user = new User();
+      
     public String addUser() throws Exception {
         User user = new User();
         user.setFirstName(firstName);
         user.setLastName(lastName);
         user.setUsername(username);
+        user.setEmail(email);
         String salt = SimpleSHA1.getSalt(password);
         user.setSalt(salt);
         user.setEncryptedPassword(SimpleSHA1.getEncryptedPassword(salt, password));
@@ -48,6 +47,23 @@ public class UserAction extends ActionSupport {
     public String listUsers() throws Exception {
         UserDAO dao = new UserDAO();
         users = dao.getUsers();
+        return SUCCESS;
+    }
+    
+    @SkipValidation 
+    public String editUser() throws Exception {
+        UserDAO dao = new UserDAO();
+        user = dao.getUser(id);
+        if( user != null )
+            return SUCCESS;
+        else
+            addActionError("User not found");
+            return ERROR;
+    }
+    
+    public String updateUser() throws Exception {
+        UserDAO dao = new UserDAO();
+        dao.updateUser(user);
         return SUCCESS;
     }
     
@@ -97,6 +113,30 @@ public class UserAction extends ActionSupport {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
     
 }

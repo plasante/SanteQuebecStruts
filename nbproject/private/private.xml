@@ -1,15 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
-    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/1">
-        <file>file:/home/plasante/NetBeansProjects/SanteQuebec/src/java/struts.xml</file>
-        <file>file:/home/plasante/NetBeansProjects/SanteQuebec/web/WEB-INF/tiles.xml</file>
-        <file>file:/home/plasante/NetBeansProjects/SanteQuebec/web/Menu.jsp</file>
-        <file>file:/home/plasante/NetBeansProjects/SanteQuebec/web/jsp/admin/RegistrationForm.jsp</file>
-        <file>file:/home/plasante/NetBeansProjects/SanteQuebec/src/java/com/uniksoft/controller/UserAction.java</file>
-        <file>file:/home/plasante/NetBeansProjects/SanteQuebec/src/java/com/uniksoft/model/User.java</file>
-        <file>file:/home/plasante/NetBeansProjects/SanteQuebec/src/java/com/uniksoft/controller/UserDAO.java</file>
-        <file>file:/home/plasante/NetBeansProjects/SanteQuebec/web/Welcome.jsp</file>
-        <file>file:/home/plasante/NetBeansProjects/SanteQuebec/src/java/com/uniksoft/controller/UserAction-validation.xml</file>
-    </open-files>
 </project-private>

@@ -1,5 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags" %>
+<s:actionmessage/>
+<s:actionerror/>
 <h2>Users Page</h2>
 <table>
     <tr>
@@ -16,8 +18,8 @@
             <td><s:property value="username"/></td>
             <td><s:property value="encryptedPassword" /></td>
             <td><s:property value="salt" /></td>
-            <td><a href="editUser">Edit</a></td>
-            <td><a href="deleteUser">Delete</a></td>
+            <td><a href="editUser?id=<s:property value="id"/>">Edit</a></td>
+            <td><a href="deleteUser?id=<s:property value="id"/>">Delete</a></td>
         </tr>
     </s:iterator>
 </table>

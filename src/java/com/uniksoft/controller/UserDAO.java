@@ -4,6 +4,7 @@ import com.uniksoft.model.User;
 import com.uniksoft.util.HibernateUtil;
 import java.util.ArrayList;
 import java.util.List;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -41,5 +42,35 @@ public class UserDAO {
             if( t != null ) t.rollback();
         }
         return users;
+    }
+
+    public User getUser(int id) {
+        SessionFactory sf = HibernateUtil.getSessionFactory();
+        Transaction t = null;
+        User user = null;
+        try {
+            Session s = sf.openSession();
+            t = s.beginTransaction();
+            Query query = s.createQuery("from User u where u.id = :id");
+            query.setInteger("id", id);
+            user = (User) query.uniqueResult();
+            t.commit();
+        } catch (Exception e) {
+            if ( t != null ) t.rollback();
+        }
+        return user;
+    }
+
+    public void updateUser(User user) {
+        SessionFactory sf = HibernateUtil.getSessionFactory();
+        Transaction t = null;
+        try {
+            Session s = sf.openSession();
+            t = s.beginTransaction();
+            s.saveOrUpdate(user);
+            t.commit();
+        } catch(Exception e) {
+            if ( t != null ) t.rollback();
+        }
     }
 }
