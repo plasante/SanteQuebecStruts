@@ -8,7 +8,7 @@ public class Person {
     
     @Id
     @GeneratedValue
-    private Long id;
+    private int id;
     
     private String name;
     private String gender;
@@ -20,11 +20,11 @@ public class Person {
     @Column(name="mailing_list")
     private Boolean mailingList;
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

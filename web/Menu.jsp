@@ -3,4 +3,5 @@
 <h2>Menu</h2>
 <a href="showLoginForm">Login</a><br/>
 <a href="showRegistrationForm">Register</a><br/>
-<a href="usersIndex">Manage Users</a>
+<a href="usersIndex">Manage Users</a><br/>
+<a href="listPerson">Manage Persons</a>

@@ -48,5 +48,33 @@
         <action name="usersIndex" method="listUsers" class="com.uniksoft.controller.UserAction">
                  <result name="success" type="tiles">/usersIndex.tiles</result>
         </action>
+        
+        <action name="personsIndex">
+            <result type="tiles">/personsRegister.tiles</result>
+        </action>
+        
+        <action name="listPerson" 
+                class="com.uniksoft.controller.person.PersonAction"
+                method="list">
+            <result type="tiles">/personsRegister.tiles</result>
+        </action>
+        
+        <action name="saveOrUpdatePerson"
+                method="saveOrUpdate"
+                class="com.uniksoft.controller.person.PersonAction">
+                <result name="success" type="redirect">listPerson</result> 
+        </action>
+        
+        <action name="editPerson"
+                method="edit"
+                class="com.uniksoft.controller.person.PersonAction">
+            <result name="success" type="tiles">/personsRegister.tiles</result>
+        </action>
+        
+        <action name="deletePerson"
+                method="delete"
+                class="com.uniksoft.controller.person.PersonAction">
+            <result name="success" type="redirect">listPerson</result>
+        </action>
     </package>
 </struts>
